@@ -39,8 +39,6 @@ Waarbij:
 
 - **URL**: `/diceset/roll`
 - **Method**: POST
-- **Parameters**:
-    - `maxNumber` (integer, required): The maximum number on the die.
 
 - **Response**:
     - Status: 200 OK
@@ -64,4 +62,5 @@ Waarbij:
 
 ## Error Handling
 
-The API should return appropriate HTTP status codes and error messages in case of invalid requests or other errors. Common status codes to use include 400 (Bad Request) for invalid input parameters and 500 (Internal Server Error) for unexpected server issues.
+The API should return appropriate HTTP status codes and error messages in case of invalid requests or other errors. 
+Common status codes to use include 400 (Bad Request) for invalid input parameters and 500 (Internal Server Error) for unexpected server issues.
