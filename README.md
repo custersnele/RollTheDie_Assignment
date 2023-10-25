@@ -4,19 +4,24 @@
 
 The Dice Rolling API allows users to roll a specified number of dice with a specified maximum number on each die. Users can choose to roll all dice at once or roll each die separately. The API returns the results of the dice rolls, and it can also provide the highest sum of all the dice rolls.
 
-## Base URL
-
-The base URL for the Dice Rolling API is `https://your-api-domain.com`.
-
 ## Endpoints
 
 ### 1. Create The Dice Set
 
 - **URL**: `/diceset`
 - **Method**: POST
-- **Parameters**:
-    - `numberOfDice` (integer, required): The number of dice in the set.
-    - `maxNumber` (integer, required): The maximum number on each die.
+- **Body**:
+
+```
+{
+  "numberOfDice": 4,
+  "maxNumber": 9
+ }
+```
+Waarbij:
+
+- `numberOfDice` (integer, required): The number of dice in the set.
+- `maxNumber` (integer, required): The maximum number on each die.
 
 - **Response**:
     - Status: 201 CREATED
@@ -27,7 +32,7 @@ The base URL for the Dice Rolling API is `https://your-api-domain.com`.
 - **Method**: GET
 - **Response**:
     - Status: 200 OK
-    - Body: An array of integers representing the results of all the dice in the set. For example, `[3, 5, 2, 4]`.
+    - Body: A json-array of integers representing the results of all the dice in the set. For example, `[3, 5, 2, 4]`.
 
 
 ### 3. Roll All Dice
