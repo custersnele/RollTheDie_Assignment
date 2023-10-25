@@ -7,7 +7,7 @@
 <h1>Dice Roller</h1>
 
 <label for="numDice">Number of Dice:</label>
-<input type="number" id="numDice" value="1">
+<input type="number" id="numDice" value="6">
 
 <label for="maxNumber">Max Number on Dice:</label>
 <input type="number" id="maxNumber" value="6">
@@ -48,25 +48,29 @@
 	}
 
 	createButton.addEventListener('click', () => {
-
-		fetch(' ?numDice=' + numDice + '&maxNumber=' + maxNumber)
-			.then(response => response.json())
-			.then(data => {
-				highestSumSpan.textContent = Math.max(...data);
-
-				dieElement.textContent = data[0];
-			})
-			.catch(error => {
-				console.error('Error:', error);
-			});
 		const numDice = numDiceInput.value;
-		diceContainer.innerHTML = '';
+		const maxNumber = maxNumberInput.value;
 
-		for (let i = 0; i < numDice; i++) {
-			const dieElement = createDieElement();
-			rollDie(dieElement);
-			diceContainer.appendChild(dieElement);
-		}
+		fetch('http://localhost:8080/diceset', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({"numberOfDice": numDice, "sidesOnEachDie": maxNumber})
+		}).then(() => {
+				diceContainer.innerHTML = '';
+
+				for (let i = 0; i < numDice; i++) {
+					const dieElement = createDieElement();
+					rollDie(dieElement);
+					diceContainer.appendChild(dieElement);
+				}
+			}
+		).catch(error => {
+			console.error('Error:', error);
+		});
+
+
 	});
 
 	diceContainer.addEventListener('click', (event) => {
