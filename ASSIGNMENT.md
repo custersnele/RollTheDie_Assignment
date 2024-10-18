@@ -5,8 +5,8 @@ Deze interface verwacht 1 methode: void roll()
 
 ### Class Die
 
-Deze klasse representeert een dobbelsteen, met een (onveranderbaar) aan zijden (minstens 4). 
-Gooi een IllegalArgumentException als het aantal zijden niet correct is.
+Deze klasse representeert een dobbelsteen, met een (onveranderbaar) aantal zijden (minstens 4). 
+Gooi een IllegalArgumentException als het aantal zijden niet correct is (dus minder dan 4).
 De dobbelsteen geeft een waarde terug tussen 1 en het aantal zijden. De klasse implementeert de interface Rollable. Wanneer de methode roll() wordt aangeroepen wordt de huidige waarde van de dobbelsteen aangepast met een nieuwe willekeurige waarde tussen 1 en het aantal zijden. Voorzie de volgende methoden:
 -	SIX_SIDED_DIE_EMOJI 🎲  Unicode: \uD83C\uDFB2
 -	Die(int sides): constructor
