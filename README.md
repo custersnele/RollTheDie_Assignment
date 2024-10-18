@@ -42,7 +42,7 @@ Waarbij:
 
 - **Response**:
     - Status: 200 OK
-    - Body: An array of integers representing the results of rolling all the dice. For example, `[3, 5, 2]`.
+    - Body: An array of integers representing the values on all the dice. For example, `[3, 5, 2]`.
 
 ### 4. Roll a Single Die
 
@@ -50,7 +50,7 @@ Waarbij:
 - **Method**: POST
 - **Response**:
     - Status: 200 OK
-    - Body: An array of integers representing the results of rolling all the dice. For example, `[3, 5, 2]`.
+    - Body: An array of integers representing the values on all the dice. For example, `[3, 5, 2]`.
 
 ### 3. Get Highest Sum
 
